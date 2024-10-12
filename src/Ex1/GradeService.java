@@ -27,5 +27,10 @@ public class GradeService {
         return Arrays.stream(grades).map(this::roundedGrade).toArray();
     }
 
+    public int maximumRoundedGrade(int[] grades) {
+        int[] roundedGrades = roundedUpGrades(grades);
+        return Arrays.stream(roundedGrades).max().getAsInt();
+    }
+
 
 }
