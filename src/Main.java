@@ -1,5 +1,6 @@
 import Ex1.GradeService;
 import Ex2.Array;
+import Ex3.BigNumber;
 
 import java.util.Arrays;
 
@@ -44,9 +45,17 @@ public class Main {
         System.out.println(array.minNSum(4));
     }
 
+
+    public static void Ex3(){
+        BigNumber bigNumber = new BigNumber(new int[]{1, 3, 0, 0, 0, 0, 0, 0, 0});
+        BigNumber bigNumber2 = new BigNumber(new int[]{8, 7, 0, 0, 0, 0, 0, 0, 0});
+
+        System.out.println(Arrays.toString(bigNumber.getSum(bigNumber2)));
+    }
     public static void main(String[] args) {
         //Ex1();
-        Ex2();
+        //Ex2();
+        Ex3();
     }
 
 
