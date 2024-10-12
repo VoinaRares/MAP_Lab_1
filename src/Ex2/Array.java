@@ -14,4 +14,22 @@ public class Array {
         this.array = array;
         this.size = array.length;
     }
+
+    public int[] getArray() {
+        return array;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public int getMax(){
+        int max = 0;
+        for(int i = 0; i < size; i++){
+            if(array[i] > max){
+                max = array[i];
+            }
+        }
+        return max;
+    }
 }
