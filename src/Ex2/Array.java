@@ -25,6 +25,15 @@ public class Array {
         return size;
     }
 
+    public void setArray(int[] array) {
+        this.array = array;
+        this.size = array.length;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+        this.array = new int[size];
+    }
     public int getMax(){
         int max = 0;
         for(int i = 0; i < size; i++){
@@ -49,6 +58,17 @@ public class Array {
         int[] sortedArray = Arrays.stream(array).sorted().toArray();
         int sum = 0;
         for(int i = sortedArray.length - 1; i >= sortedArray.length - n; i--){
+            sum += sortedArray[i];
+        }
+
+        return sum;
+    }
+
+    public int minNSum(int n){
+        int[] sortedArray = Arrays.stream(array).sorted().toArray();
+        int sum = 0;
+
+        for(int i = 0; i < n; i++){
             sum += sortedArray[i];
         }
 

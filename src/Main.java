@@ -39,6 +39,9 @@ public class Main {
 
         //Ex 2.3
         System.out.println(array.maxNSum(4));
+
+        //Ex 2.4
+        System.out.println(array.minNSum(4));
     }
 
     public static void main(String[] args) {
