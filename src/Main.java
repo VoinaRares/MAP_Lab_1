@@ -1,8 +1,14 @@
 import Ex1.GradeService;
 import Ex2.Array;
 import Ex3.BigNumber;
+import Ex4.Keyboard;
+import Ex4.Shop;
+import Ex4.ShopItem;
+import Ex4.USBDrive;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 //import java.util.Arrays;
 
@@ -45,7 +51,6 @@ public class Main {
         System.out.println(array.minNSum(4));
     }
 
-
     public static void Ex3(){
         //Ex 3.1
         BigNumber bigNumber = new BigNumber(new int[]{1, 3, 0, 0, 0, 0, 0, 0, 0});
@@ -65,10 +70,53 @@ public class Main {
         //Ex 3.4
         System.out.println(Arrays.toString(bigNumber2.getDivision(2)));
     }
+
+    public static void Ex4(){
+        Shop shop = new Shop();
+        //Ex 4.1
+        List<ShopItem> items = new ArrayList<>();
+        Keyboard k1 = new Keyboard(40);
+        Keyboard k2 = new Keyboard(35);
+        Keyboard k3 = new Keyboard(70);
+        Keyboard k4 = new Keyboard(15);
+        Keyboard k5 = new Keyboard(45);
+        items.add(k1);
+        items.add(k2);
+        items.add(k3);
+        items.add(k4);
+        items.add(k5);
+
+        USBDrive usb1 = new USBDrive(12);
+        USBDrive usb2 = new USBDrive(40);
+        items.add(usb1);
+        items.add(usb2);
+
+        shop.setItems(items);
+        System.out.println(shop.getCheapestKeyboard().getPrice());
+
+
+        //Ex 4.2
+
+        System.out.println(shop.getMostExpensiveItem().getPrice());
+
+
+        //Ex 4.3
+        System.out.println(shop.getMostExpensiveUSBDriveOnBudget(40).getPrice());
+
+
+        //Ex 4.4
+
+        System.out.println(shop.getKeyboardAndUSBUnderBudget(60));
+        System.out.println(shop.getKeyboardAndUSBUnderBudget(100));
+        System.out.println(shop.getKeyboardAndUSBUnderBudget(110));
+
+    }
+
     public static void main(String[] args) {
         //Ex1();
         //Ex2();
-        Ex3();
+        //Ex3();
+        Ex4();
     }
 
 
