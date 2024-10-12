@@ -47,15 +47,23 @@ public class Main {
 
 
     public static void Ex3(){
+        //Ex 3.1
         BigNumber bigNumber = new BigNumber(new int[]{1, 3, 0, 0, 0, 0, 0, 0, 0});
         BigNumber bigNumber2 = new BigNumber(new int[]{8, 7, 0, 0, 0, 0, 0, 0, 0});
-
         System.out.println(Arrays.toString(bigNumber.getSum(bigNumber2)));
 
+        //Ex 3.2
         bigNumber.setNumber(new int[]{8, 3, 0, 0, 0, 0, 0, 0, 0});
         bigNumber2.setNumber(new int[]{5, 4, 0, 0, 0, 0, 0, 0, 1});
 
         System.out.println(Arrays.toString(bigNumber.getDifference(bigNumber2)));
+
+        //Ex 3.3
+        bigNumber2.setNumber(new int[]{2, 3, 6, 0, 0, 0, 0, 0, 1});
+        System.out.println(Arrays.toString(bigNumber2.getMultiplication(2)));
+
+        //Ex 3.4
+        System.out.println(Arrays.toString(bigNumber2.getDivision(2)));
     }
     public static void main(String[] args) {
         //Ex1();
