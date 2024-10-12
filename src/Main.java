@@ -51,6 +51,11 @@ public class Main {
         BigNumber bigNumber2 = new BigNumber(new int[]{8, 7, 0, 0, 0, 0, 0, 0, 0});
 
         System.out.println(Arrays.toString(bigNumber.getSum(bigNumber2)));
+
+        bigNumber.setNumber(new int[]{8, 3, 0, 0, 0, 0, 0, 0, 0});
+        bigNumber2.setNumber(new int[]{5, 4, 0, 0, 0, 0, 0, 0, 1});
+
+        System.out.println(Arrays.toString(bigNumber.getDifference(bigNumber2)));
     }
     public static void main(String[] args) {
         //Ex1();

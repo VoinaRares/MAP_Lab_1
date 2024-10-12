@@ -11,6 +11,10 @@ public class BigNumber {
         return number;
     }
 
+    public void setNumber(int[] number) {
+        this.number = number;
+    }
+
     public int[] getSum(BigNumber addingNumber) {
         int[] result = new int[this.number.length + 1];
         for(int i = this.number.length - 1; i >= 0; i--) {
@@ -19,6 +23,19 @@ public class BigNumber {
                 result[i] = result[i + 1]/10;
                 result[i + 1] = result[i + 1]%10;
 
+            }
+        }
+
+        return result;
+    }
+
+    public int[] getDifference(BigNumber subtractingNumber) {
+        int[] result = new int[this.number.length + 1];
+        for(int i = this.number.length - 1; i >= 0; i--) {
+            result[i + 1] = this.number[i] - subtractingNumber.getNumber()[i] + result[i + 1];
+            if(result[i + 1] < 0) {
+                result[i] = -1;
+                result[i + 1] = result[i + 1] + 10;
             }
         }
 
