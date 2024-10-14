@@ -99,7 +99,6 @@ public class Main {
 
         System.out.println(shop.getMostExpensiveItem().getPrice());
 
-
         //Ex 4.3
         System.out.println(shop.getMostExpensiveUSBDriveOnBudget(40).getPrice());
 

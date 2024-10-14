@@ -39,7 +39,7 @@ public class Shop {
         for(ShopItem item : items) {
             if(mostExpensiveItem == null){
                 mostExpensiveItem = item;
-            } else if (item.getPrice() > mostExpensiveItem.getPrice()) {
+            } else if (item.getPrice() > mostExpensiveItem.getPrice() && mostExpensiveItem.getPrice() != Integer.MAX_VALUE) {
                 mostExpensiveItem = item;
             }
         }
@@ -48,10 +48,10 @@ public class Shop {
     }
 
     public USBDrive getMostExpensiveUSBDriveOnBudget(int budget) {
-        USBDrive mostExpensiveUSBDrive = new USBDrive();
+        USBDrive mostExpensiveUSBDrive = new USBDrive(0);
 
         for(ShopItem item : items) {
-            if(item instanceof USBDrive && item.getPrice() <= budget && item.getPrice() > mostExpensiveUSBDrive.getPrice()) {
+            if(item instanceof USBDrive && item.getPrice() <= budget && item.getPrice() > mostExpensiveUSBDrive.getPrice() && mostExpensiveUSBDrive.getPrice() != Integer.MAX_VALUE) {
                 mostExpensiveUSBDrive = (USBDrive) item;
             }
         }

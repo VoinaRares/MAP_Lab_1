@@ -1,26 +1,12 @@
 package Ex4;
 
-public class USBDrive implements ShopItem{
-
-    private int price;
+public class USBDrive extends ShopItem {
+    public USBDrive() {
+        super();
+    }
 
     public USBDrive(int price){
-        this.price = price;
+        super(price);
     }
-
-    public USBDrive(){
-        this.price = 0;
-    }
-
-    @Override
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    @Override
-    public int getPrice() {
-        return price;
-    }
-
 
 }
