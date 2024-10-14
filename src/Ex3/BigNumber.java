@@ -29,11 +29,25 @@ public class BigNumber {
         return result;
     }
 
-    //assumes that this.number is bigger than subtracting number
+    private boolean isBigger(BigNumber comparingNumber) {
+        for(int i = 0; i < this.number.length; i++) {
+            if(comparingNumber.getNumber()[i] > this.number[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public int[] getDifference(BigNumber subtractingNumber) {
         int[] result = new int[this.number.length + 1];
-        for(int i = this.number.length - 1; i >= 0; i--) {
-            result[i + 1] = this.number[i] - subtractingNumber.getNumber()[i] + result[i + 1];
+        BigNumber b1 = new BigNumber(this.number);
+        BigNumber b2 = new BigNumber(subtractingNumber.getNumber());
+        if(this.isBigger(subtractingNumber)) {
+            b1.setNumber(subtractingNumber.getNumber());
+            b2.setNumber(this.getNumber());
+        }
+        for(int i = b1.number.length - 1; i >= 0; i--) {
+            result[i + 1] = b1.number[i] - b2.getNumber()[i] + result[i + 1];
             if(result[i + 1] < 0) {
                 result[i] = -1;
                 result[i + 1] = result[i + 1] + 10;
