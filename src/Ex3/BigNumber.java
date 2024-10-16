@@ -15,6 +15,21 @@ public class BigNumber {
         this.number = number;
     }
 
+    private int[] removeExtraZeros(int[] number) {
+        int index = 0;
+        int extraZeroes = 0;
+        while(number[index] == 0) {
+            extraZeroes++;
+            index++;
+        }
+        int[] result = new int[number.length - extraZeroes];
+        for(int i = extraZeroes; i < number.length; i++) {
+            result[i - extraZeroes] = number[i];
+        }
+
+        return result;
+    }
+
     public int[] getSum(BigNumber addingNumber) {
         int[] result = new int[this.number.length + 1];
         for(int i = this.number.length - 1; i >= 0; i--) {
@@ -26,7 +41,7 @@ public class BigNumber {
             }
         }
 
-        return result;
+        return removeExtraZeros(result);
     }
 
     private boolean isBigger(BigNumber comparingNumber) {
@@ -54,7 +69,7 @@ public class BigNumber {
             }
         }
 
-        return result;
+        return removeExtraZeros(result);
     }
 
     public int[] getMultiplication(int multiplier) {
@@ -67,7 +82,7 @@ public class BigNumber {
             }
         }
 
-        return result;
+        return removeExtraZeros(result);
     }
 
     public int[] getDivision(int divisor) {
@@ -78,6 +93,6 @@ public class BigNumber {
             remainingFromDivision = this.number[i] % divisor;
         }
 
-        return result;
+        return removeExtraZeros(result);
     }
 }

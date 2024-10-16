@@ -36,7 +36,7 @@ public class Main {
     }
 
     public static void Ex2(){
-        Array array = new Array(new int[]{4, 8, 3, 10, 17});
+        Array array = new Array(new int[]{4, 8, 3, 17, 17});
 
         //Ex 2.1
         System.out.println(array.getMax());
@@ -59,7 +59,7 @@ public class Main {
 
         //Ex 3.2
         bigNumber.setNumber(new int[]{8, 3, 0, 0, 0, 0, 0, 0, 0});
-        bigNumber2.setNumber(new int[]{5, 4, 0, 0, 0, 0, 0, 0, 1});
+        bigNumber2.setNumber(new int[]{8, 1, 0, 0, 0, 0, 0, 0, 1});
 
         System.out.println(Arrays.toString(bigNumber.getDifference(bigNumber2)));
 
@@ -113,9 +113,9 @@ public class Main {
 
     public static void main(String[] args) {
         //Ex1();
-        //Ex2();
-        //Ex3();
-        Ex4();
+        Ex2();
+        Ex3();
+        //Ex4();
     }
 
 
