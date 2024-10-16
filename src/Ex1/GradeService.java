@@ -4,12 +4,22 @@ import java.util.Arrays;
 
 public class GradeService {
     public int[] unsatisfactoryGrades(int[] grades) {
-        return Arrays.stream(grades).filter((grade) -> grade <= 38).toArray();
+        int[] result = new int[grades.length];
+        for(int i = 0; i < grades.length; i++) {
+            if(grades[i] <= 38){
+                result[i] = grades[i];
+            }
+        }
+        return result;
     }
 
     public double average(int[] grades) {
 
-        double result = (double) Arrays.stream(grades).sum() / grades.length;
+        double result = 0;
+        for(int i = 0; i < grades.length; i++) {
+            result += grades[i];
+        }
+        result /= grades.length;
         return Math.round(result * 100) / 100.0;
     }
 
@@ -24,15 +34,23 @@ public class GradeService {
     }
 
     public int[] roundedUpGrades(int[] grades) {
-        return Arrays.stream(grades).map(this::roundedGrade).toArray();
+        int[] result = new int[grades.length];
+        for(int i = 0; i < grades.length; i++) {
+            result[i] = roundedGrade(grades[i]);
+        }
+        return result;
     }
 
     public int maximumRoundedGrade(int[] grades) {
         int[] roundedGrades = roundedUpGrades(grades);
-        if(Arrays.stream(roundedGrades).max().isPresent()) {
-            return Arrays.stream(roundedGrades).max().getAsInt();
+
+        int max = 0;
+        for(int i =0; i < roundedGrades.length; i++) {
+            if(roundedGrades[i] > max) {
+                max = roundedGrades[i];
+            }
         }
-        return 0;
+        return max;
     }
 
 

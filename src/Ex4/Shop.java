@@ -51,7 +51,8 @@ public class Shop {
         USBDrive mostExpensiveUSBDrive = new USBDrive(0);
 
         for(ShopItem item : items) {
-            if(item instanceof USBDrive && item.getPrice() <= budget && item.getPrice() > mostExpensiveUSBDrive.getPrice() && mostExpensiveUSBDrive.getPrice() != Integer.MAX_VALUE) {
+            if(item instanceof USBDrive && item.getPrice() <= budget &&
+                    item.getPrice() > mostExpensiveUSBDrive.getPrice() && mostExpensiveUSBDrive.getPrice() != Integer.MAX_VALUE) {
                 mostExpensiveUSBDrive = (USBDrive) item;
             }
         }

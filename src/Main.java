@@ -10,15 +10,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-//import java.util.Arrays;
-
 public class Main {
     public static void Ex1(){
         GradeService gradeService = new GradeService();
         int[] grades = new int[]{29, 37, 38, 41, 84, 67};
 
+
+        int[] roundedGrades =  gradeService.roundedUpGrades(grades);
         //Ex 1.1
-        for( int grade : gradeService.unsatisfactoryGrades(grades) ) {
+        for( int grade : gradeService.unsatisfactoryGrades(gradeService.roundedUpGrades(grades)) ) {
             System.out.println(grade);
         }
 
@@ -36,7 +36,7 @@ public class Main {
     }
 
     public static void Ex2(){
-        Array array = new Array(new int[]{4, 8, 3, 17, 17});
+        Array array = new Array(new int[]{-4, 8, 3, 10, 17});
 
         //Ex 2.1
         System.out.println(array.getMax());
@@ -65,7 +65,7 @@ public class Main {
 
         //Ex 3.3
         bigNumber2.setNumber(new int[]{2, 3, 6, 0, 0, 0, 0, 0, 1});
-        System.out.println(Arrays.toString(bigNumber2.getMultiplication(2)));
+        System.out.println(Arrays.toString(bigNumber2.getMultiplication(1)));
 
         //Ex 3.4
         System.out.println(Arrays.toString(bigNumber2.getDivision(2)));
@@ -76,18 +76,18 @@ public class Main {
         //Ex 4.1
         List<ShopItem> items = new ArrayList<>();
         Keyboard k1 = new Keyboard(40);
-        Keyboard k2 = new Keyboard(35);
-        Keyboard k3 = new Keyboard(70);
-        Keyboard k4 = new Keyboard(15);
-        Keyboard k5 = new Keyboard(45);
-        items.add(k1);
-        items.add(k2);
+        Keyboard k2 = new Keyboard(50);
+        Keyboard k3 = new Keyboard(60);
+//        Keyboard k4 = new Keyboard(15);
+//        Keyboard k5 = new Keyboard(45);
+//        items.add(k1);
+//        items.add(k2);
         items.add(k3);
-        items.add(k4);
-        items.add(k5);
+//        items.add(k4);
+//        items.add(k5);
 
-        USBDrive usb1 = new USBDrive(12);
-        USBDrive usb2 = new USBDrive(40);
+        USBDrive usb1 = new USBDrive(8);
+        USBDrive usb2 = new USBDrive(12);
         items.add(usb1);
         items.add(usb2);
 
@@ -106,16 +106,16 @@ public class Main {
         //Ex 4.4
 
         System.out.println(shop.getKeyboardAndUSBUnderBudget(60));
-        System.out.println(shop.getKeyboardAndUSBUnderBudget(100));
-        System.out.println(shop.getKeyboardAndUSBUnderBudget(110));
+//        System.out.println(shop.getKeyboardAndUSBUnderBudget(100));
+//        System.out.println(shop.getKeyboardAndUSBUnderBudget(110));
 
     }
 
     public static void main(String[] args) {
         //Ex1();
-        Ex2();
-        Ex3();
-        //Ex4();
+        //Ex2();
+        //Ex3();
+        Ex4();
     }
 
 
